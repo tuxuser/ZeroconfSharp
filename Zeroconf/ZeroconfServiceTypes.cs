@@ -6,7 +6,7 @@ namespace Zeroconf
     public class ZeroconfServiceTypes : IListener
     {
         private List<string> foundServices;
-        public ZeroconfServiceTypes()
+        private ZeroconfServiceTypes()
         {
             this.foundServices = new List<string>();
         }
@@ -37,7 +37,7 @@ namespace Zeroconf
             );
 
             // Wait for responses
-            System.Threading.Thread.Sleep(timeout);
+            System.Threading.Thread.Sleep(timeout * 1000);
 
             // Close down anything we opened
             if (zc == null)
