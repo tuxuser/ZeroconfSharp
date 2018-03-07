@@ -118,7 +118,7 @@ namespace Zeroconf
                         this.Answers.Add(new DNSPointer(domain, type, cls, ttl, name));
                         break;
                     case DNSType.TXT:
-                        byte[] text = this.ber.ReadPrefixedBytes();
+                        byte[] text = this.ber.ReadBytes(length);
                         this.Answers.Add(new DNSText(domain, type, cls, ttl, text));
                         break;
                     case DNSType.SRV:

@@ -98,7 +98,6 @@ namespace Zeroconf
 
             while (br.BaseStream.Position < br.BaseStream.Length)
             {
-                int length = br.ReadByte();
                 string[] kv = br.ReadPrefixedString().Split('=');
                 if (kv.Length != 2)
                     throw new Exception("Invalid keyValuePair");
